@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                     .update("completada", tarea.completada)
             },
             alEditarTarea = { tarea ->
-                // Guarda tanto descripción como fechaVencimiento
+                // guarda descripción y fechaVencimiento
                 val datos = mutableMapOf<String, Any>(
                     "descripcion" to tarea.descripcion
                 )
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
             .addOnSuccessListener { resultados ->
                 listaTareas.clear()
                 for (documento in resultados) {
-                    val fechaVenc = documento.getLong("fechaVencimiento") // ahora Long?
+                    val fechaVenc = documento.getLong("fechaVencimiento")
                     val tarea = Tarea(
                         id = documento.id,
                         descripcion = documento.getString("descripcion") ?: "",

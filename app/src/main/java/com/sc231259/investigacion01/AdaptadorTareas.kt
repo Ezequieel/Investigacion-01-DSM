@@ -15,13 +15,13 @@ data class Tarea(
     val id: String = "",
     var descripcion: String,
     var completada: Boolean = false,
-    var fechaVencimiento: Long? = null    // NUEVO: fecha en timestamp millis
+    var fechaVencimiento: Long? = null
 )
 
 class AdaptadorTareas(
     private val listaTareas: MutableList<Tarea>,
     private val alCambiarEstado: (tarea: Tarea) -> Unit,
-    private val alEditarTarea: (tarea: Tarea) -> Unit  // callback unificado para descripción y fecha
+    private val alEditarTarea: (tarea: Tarea) -> Unit  //  ojo callback
 ) : RecyclerView.Adapter<AdaptadorTareas.VistaTarea>() {
 
     inner class VistaTarea(val binding: ItemTaskBinding) :
@@ -134,7 +134,7 @@ class AdaptadorTareas(
                 val nuevaDescripcion = editTextDescripcion.text.toString()
                 if (nuevaDescripcion.isNotBlank()) {
                     tarea.descripcion = nuevaDescripcion
-                    tarea.fechaVencimiento = null // Quitar fecha
+                    tarea.fechaVencimiento = null
                     alEditarTarea(tarea)
                     notifyItemChanged(posicion)
                 }
