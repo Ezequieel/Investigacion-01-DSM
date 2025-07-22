@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_blue">#667eea</color>
+    <color name="primary_purple">#764ba2</color>
+    <color name="delete_red">#ff6b6b</color>
+    <color name="edit_teal">#17a2b8</color>
+    <color name="text_dark">#2c3e50</color>
+    <color name="text_gray">#7f8c8d</color>
+    <color name="overdue_red">#e74c3c</color>
+</resources>
